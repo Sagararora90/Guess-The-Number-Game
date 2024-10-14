@@ -1,36 +1,22 @@
-name: CI for HTML, CSS, JS Project
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      - main  # Triggers the workflow when changes are pushed to the 'main' branch
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the repository code
+      # Step 1: Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Set up Node.js environment to install any dependencies and run tests
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      # Step 2: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          node-version: '16'
-
-      # Install dependencies (if applicable, like for running linters or testing)
-      - name: Install dependencies
-        run: npm install
-
-      # Run a basic linter or any build tasks (replace with appropriate linter like eslint if applicable)
-      - name: Run Linter (if applicable)
-        run: npm run lint
-
-      # Run tests if any are set up (optional)
-      - name: Run Tests
-        run: npm test
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./  # The directory where your HTML, CSS, and JS files are located
