@@ -1,0 +1,36 @@
+name: CI for HTML, CSS, JS Project
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node.js environment to install any dependencies and run tests
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      # Install dependencies (if applicable, like for running linters or testing)
+      - name: Install dependencies
+        run: npm install
+
+      # Run a basic linter or any build tasks (replace with appropriate linter like eslint if applicable)
+      - name: Run Linter (if applicable)
+        run: npm run lint
+
+      # Run tests if any are set up (optional)
+      - name: Run Tests
+        run: npm test
