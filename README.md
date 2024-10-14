@@ -1,6 +1,11 @@
 # Guess The Number Game
 
-This is a simple number guessing game built using HTML, CSS, and JavaScript. The player must guess a random number between 1 and 100, and the game will provide feedback on how close the guesses are. The player has 10 attempts to guess the correct number. 
+This is a simple number guessing game built using HTML, CSS, and JavaScript. The player must guess a random number between 1 and 100, and the game will provide feedback on how close the guesses are. The player has 10 attempts to guess the correct number.
+
+## Technologies Used
+1. HTML5
+2. CSS
+3. JavaScipt(ES6)
 
 ## Features
 
@@ -39,9 +44,7 @@ This is a simple number guessing game built using HTML, CSS, and JavaScript. The
 3. Make changes or improvements, and submit a pull request via the following:
 
   ```bash
-  git remote add origin https://github.com/Sagararora90/Guess-The-Number-Game.git 
+  git remote add origin https://github.com/Sagararora90/Guess-The-Number-Game.git
 
-### Technologies Used
-1. HTML5
-2. CSS
-3. JavaScipt(ES6)
+ 
+
